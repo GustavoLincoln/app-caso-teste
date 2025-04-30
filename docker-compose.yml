@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: ./app
+    container_name: app
+    ports:
+      - "3000:3000"
+
+  tester:
+    build:
+      context: ./test
+    depends_on:
+      - app
